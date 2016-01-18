@@ -16,7 +16,7 @@ $('.slider').slick({
     });
     $('.popup').click(function(){
         $('.popup_bg').addClass('show_me');
-        $('.registr_form').addClass('show_me');
+        $('.simple_registr').addClass('show_me');
         $('.one').addClass('show_me');
     });
     $('.popup_bg').click(function(){
@@ -47,4 +47,15 @@ $('.slider').slick({
         }, 900, 'swing', function () {
             window.location.hash = target;
         });
+    });
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 600) {
+            $('.go_top').fadeIn();
+        } else {
+            $('.go_top').fadeOut();
+        }
+    });
+    $('.go_top').click(function(){
+        $('html, body').animate({scrollTop : 0},600);
+        return false;
     });
